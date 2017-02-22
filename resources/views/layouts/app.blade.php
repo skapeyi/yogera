@@ -7,13 +7,11 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    @if (empty($page_title)):
-        <title> {{ config('app.name', 'Laravel') }} - Be Heard</title>
+    @if ( isset($page_title)):
+    <title>{{$page_title}} | {{config('app.name', 'Laravel')}}</title>
     @else :
-        <title>{{$page_title}} | {{ config('app.name', 'Laravel') }} </title>
+    <title>{{config('app.name', 'Laravel')}} - Be Heard</title>
     @endif
-
-
             <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -35,7 +33,7 @@
 </head>
 <body>
 <div id="app">
-    <nav class="navbar navbar-default navbar-static-top">
+    <nav class="navbar navbar-default navbar-static-top navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
 
@@ -99,11 +97,7 @@
         </div>
     </nav>
 
-    <div class="container">
-        @yield('content')
-    </div>
-
-
+    @yield('content')
 </div>
 
 <!-- Scripts -->

@@ -25,3 +25,7 @@ Route::get('/situation','SituationController@index');
 Route::post('/situation','SiutationController@store');
 Route::get('/contact','HomeController@contact');
 
+Route::get('/admin','AdminController@users');
+Route::get('/admin/users', 'AdminController@users');
+
+

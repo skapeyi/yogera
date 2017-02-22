@@ -164,7 +164,7 @@ Banner
 }
 
 .quote .btn {
-    background-color:
+    background-color: #fff;
 }
 
 .modal-dialog {
@@ -992,4 +992,7 @@ header .wel {
 
 .who-we h2 {
     color: #d9534f;
+}
+#content-container{
+    margin-top: 75px;
 }
