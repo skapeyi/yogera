@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HeroController extends Controller
+class CampaignController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class HeroController extends Controller
      */
     public function index()
     {
-        return redirect('/admin/users');
+        return view('campaigns.index');
     }
 
     /**
@@ -80,14 +80,5 @@ class HeroController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function heros(){
-      return view('heros.all');
-    }
-
-    public function situations()
-    {
-      return view('situations.all');
     }
 }

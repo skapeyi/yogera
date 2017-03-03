@@ -61,8 +61,8 @@
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="{{ url('/discussions') }}">Participate</a></li>
-                    <li><a href="{{ url('/information') }}">Information</a></li>
+                    <!-- <li><a href="{{ url('/discussions') }}">Participate</a></li>
+                    <li><a href="{{ url('/information') }}">Information</a></li> -->
                     <!-- Authentication Links -->
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>
@@ -100,10 +100,15 @@
         <div class="row">
             <div class="col-md-3">
                 <ul class="nav nav-sidebar">
-                    <li class="active"><a href="/admin/users">Users</a></li>
-                    <li><a href="/admin/discussions">Discussions</a></li>
-                    <li><a href="/admin/information">Information</a></li>
-                    <li><a href="/radiotopics">Dj Area</a></li>
+                    <li><a href="/admin/stats">Statistics</a></li>
+                    <li class="active"><a href="/admin">Users</a></li>
+                    <li><a href="/admin/heros">Heros</a></li>
+                    <li><a href="/admin/situations">Situations</a></li>
+                    <li><a href="/admin/campaigns">Campaigns</a></li>
+                    <li><a href="/admin/rights">Human Rights Articles</a></li>
+                    <li><a href="/admin/opinions">Public Opinions</a></li>
+                    <li><a href="/admin/parliament">Parliamentary Discussions</a></li>
+                    <li><a href="/admin/blogs">Blogs</a></li>
                 </ul>
 
 
@@ -119,7 +124,7 @@
 <div class="navbar navbar-default navbar-fixed-bottom hidden-sm hidden-xs">
     <div class="container">
         <p class="navbar-text pull-left">© <?= date("Y")?>
-            <a href="http://torodev.co.ug/" target="_blank">Toro Development Network</a>
+            <a href="http://torodev.co.ug/" target="_blank">Yogera</a>
         </p>
 
         <ul class="nav navbar-nav nav-right pull-right">

@@ -17,15 +17,36 @@ class AdminController extends Controller
         return view('admin.users.all', compact('users'));
     }
 
-
-    public function discussions(){
-        $discussions = Discussion::all()->toArray();
-        return view('admin.discussions.all',compact('discussions'));
+    public function stats(){
+        return view('admin.stats.all');
     }
 
-    public function information(){
-        $information = Information::all()->toArray();
-        return view('admin.information.all', compact('information'));
+    public function heros(){
+        return view('admin.heros.all');
     }
 
+    public function situations(){
+        return view('admin.heros.all');
+    }
+
+    public function campaigns(){
+      return view('admin.heros.situations');
+    }
+
+    public function rights(){
+      return view('admin.rights.all');
+    }
+
+    public function opinions(){
+      return view('admin.rights.all');
+    }
+
+    public function parliaments()
+    {
+      return view('admin.parliament.all');
+    }
+
+    public function blogs(){
+      return view('admin.blogs.all');
+    }
 }

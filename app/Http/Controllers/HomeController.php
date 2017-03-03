@@ -24,7 +24,7 @@ class HomeController extends Controller
     public function index()
     {
         $page_title = "Be Heard";
-        return view('home', compact('page_title'));
+        return view('welcome', compact('page_title'));
     }
 
     public function contact(){
