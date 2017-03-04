@@ -25,9 +25,12 @@ Route::get('/blog','ArticleController@blog');
 Route::get('/know-your-rights','ArticleController@rights');
 Route::resource('/blogs','ArticlesController');
 
+Route::get('/celebrate-a-person', 'HeroController@create');
 Route::get('/heros', 'HeroController@heros');
 Route::post('heros', 'HeroController@store');
 
+Route::get('/shame-a-person', 'HeroController@shame');
+Route::get('/corrupt-officials','HeroController@shamed');
 Route::get('/situation','HeroController@situations');
 Route::post('/situation','HeroController@store');
 
@@ -43,3 +46,7 @@ Route::get('/admin/rights','AdminController@rights');
 Route::get('/admin/opinions', 'AdminController@opinions');
 Route::get('/admin/parliament','AdminController@parliaments');
 Route::get('/admin/blogs','AdminController@blogs');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

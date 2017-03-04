@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Hero;
+use Illuminate\Support\Facades\Auth;
 
 class HeroController extends Controller
 {
@@ -23,7 +25,12 @@ class HeroController extends Controller
      */
     public function create()
     {
-        //
+        return view('heros.create');
+    }
+
+    public function shame()
+    {
+        return view('heros.shame');
     }
 
     /**
@@ -34,7 +41,29 @@ class HeroController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if(Auth::check()){
+          $user_id = Auth::user()->id;
+        }
+        else{
+          $user_id = 2;
+        }
+        $hero = new Hero();
+        $hero->type = $request->type;
+        $hero->person = $request->person;
+        $hero->sector = $request->sector;
+        $hero->organisation = $request->organization;
+        $hero->region = $request->region;
+        $hero->gender = $request->gender;
+        $hero->reason = $request->reason;
+        $hero->created_by = $user_id;
+
+        if($hero->save()){
+          flash("Your information has been saved and will be visible once approved!","success");
+          return redirect('/heros');
+        }
+        else{
+          flash("Something went wrong while processing your request, please try again later.","error");
+        }
     }
 
     /**
@@ -83,7 +112,13 @@ class HeroController extends Controller
     }
 
     public function heros(){
-      return view('heros.all');
+      $heros = Hero::where(['type' =>'hero'])->get()->toArray();
+      return view('heros.all', compact('heros'));
+    }
+
+    public function shamed(){
+      $heros = Hero::where(['type' =>'shame'])->get()->toArray();
+      return view('heros.shamed', compact('heros'));
     }
 
     public function situations()
