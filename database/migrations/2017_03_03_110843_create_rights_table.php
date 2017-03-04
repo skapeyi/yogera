@@ -16,7 +16,11 @@ class CreateRightsTable extends Migration
         Schema::create('rights', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->text('descriptions');
+            $table->text('description');
+            $table->string('banner_url');
+            $table->string('attachment_url');
+            $table->boolean('deleted');
+            $table->boolean('approved');
             $table->integer('created_by')->unsigned();;
             $table->timestamps();
         });

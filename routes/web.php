@@ -38,6 +38,7 @@ Route::get('/campaigns','CampaignController@index');
 
 Route::get('/admin','AdminController@users');
 Route::get('/admin/heros', 'AdminController@heros');
+Route::get('/admin/shames', 'AdminController@shamed');
 Route::get('/admin/situations', 'AdminController@situations');
 Route::get('/admin/articles', 'AdminController@articles');
 Route::get('/admin/stats','AdminController@stats');

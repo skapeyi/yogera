@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Hero;
 
 class AdminController extends Controller
 {
@@ -22,7 +23,13 @@ class AdminController extends Controller
     }
 
     public function heros(){
-        return view('admin.heros.all');
+      $heros = Hero::where(['type' => 'hero'])->orderBy('id','DESC')->get()->toArray();
+      return view('admin.heros.all', compact('heros'));
+    }
+
+    public function shamed(){
+      $shamed = Hero::where(['type' => 'shame'])->orderBy('id','DESC')->get()->toArray();
+      return view('admin.heros.shamed', compact('shamed'));
     }
 
     public function situations(){
