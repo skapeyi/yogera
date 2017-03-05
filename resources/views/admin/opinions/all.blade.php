@@ -2,14 +2,13 @@
 
 @section('content')
   <div class="page-header">
-    <h3>Parliment Discussions</h3>
+    <h3>Public opinions</h3>
   </div>
-
   <div class="panel pane-primary">
     <div class="panel-heading clearfix">
         <div class="btn-group pull-right">
             <a href="/articles/create" class="btn btn-primary btn-sm">
-              New Parliament Dicussion
+              New Opinion
             </a>
         </div>
     </div>
@@ -30,12 +29,12 @@
             $i = 1
             @endphp
 
-            @foreach($parliament_dicussions as $parliament_dicussion)
+            @foreach($opinions as $opinion)
                 <tr>
                     <td>{{$i}}</td>
-                    <td>{{$parliament_dicussion["title"]}}</td>
-                    <td>{!! $parliament_dicussion["content"] !!}</td>
-                    <td>{{date('d/M/y',strtotime($parliament_dicussion["created_at"]))}}</td>
+                    <td>{{$opinion["title"]}}</td>
+                    <td>{!! $opinion["content"] !!}</td>
+                    <td>{{date('d/M/y',strtotime($opinion["created_at"]))}}</td>
                     <td>
                         <p data-placement="top" data-toggle="tooltip" title="Delete">
                             <button class="btn btn-danger btn-xs" data-title="Delete"><span

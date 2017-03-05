@@ -15,6 +15,15 @@ class CreateArticlesTable extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('title');
+            $table->string('category');
+            $table->text('content');
+            $table->string('banner_url');
+            $table->string('attachment_url');
+            $table->string('external_url');
+            $table->boolean('approved')->default(0);
+            $table->boolean('deleted')->default(0);
+            $table->integer('created_by')->unsigned();
             $table->timestamps();
         });
     }

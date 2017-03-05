@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Hero;
+use App\Article;
 
 class AdminController extends Controller
 {
@@ -14,7 +15,7 @@ class AdminController extends Controller
     }
 
     public function users(){
-        $users = User::all()->toArray();
+        $users = User::orderBy('id','DESC')->get()->toArray();
         return view('admin.users.all', compact('users'));
     }
 
@@ -33,27 +34,32 @@ class AdminController extends Controller
     }
 
     public function situations(){
-        return view('admin.heros.all');
+        return view('admin.situation.situation');
     }
 
     public function campaigns(){
-      return view('admin.heros.situations');
+      $campaigns = Article::where(['category' =>'campaigns'])->get()->toArray();
+      return view('admin.campaigns.all', compact('campaigns'));
     }
 
     public function rights(){
-      return view('admin.rights.all');
+      $rights = Article::where(['category' =>'human_rights'])->get()->toArray();
+      return view('admin.rights.all', compact('rights'));
     }
 
     public function opinions(){
-      return view('admin.rights.all');
+      $opinions = Article::where(['category' =>'public_opinions'])->get()->toArray();
+      return view('admin.opinions.all', compact('opinions'));
     }
 
     public function parliaments()
     {
-      return view('admin.parliament.all');
+      $parliament_dicussions =  Article::where(['category' =>'parliament_discussions'])->get()->toArray();
+      return view('admin.parliament.all', compact('parliament_dicussions'));
     }
 
     public function blogs(){
-      return view('admin.blogs.all');
+      $blogs = Article::where(['category' =>'blogs'])->get()->toArray();
+      return view('admin.blogs.all', compact('blogs'));
     }
 }

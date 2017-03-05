@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Article;
+use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller
 {
@@ -23,7 +25,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        return view('articles.create');
     }
 
     /**
@@ -34,7 +36,36 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      if(Auth::check()){
+        $user_id = Auth::user()->id;
+      }
+      else{
+        $user_id = 2;
+      }
+
+      $article = new Article();
+      $article->created_by = $user_id;
+      $article->title = $request->title;
+      $article->category = $request->category;
+      $article->content = $request->content;
+      if(empty($request->external_url)){
+        $article->external_url = "#";
+      }
+      else{
+        $article->external_url = "#";
+      }
+      // Set banner url and attachment url to # for now
+      $article->banner_url = "#";
+      $article->attachment_url = "#";
+
+      if($article->save()){
+        flash("Your information has been saved and will be visible once approved!","success");
+        return redirect('/');
+      }
+      else{
+        flash("Something went wrong while processing your request, please try again later.","error");
+        // go back to previous page!
+      }
     }
 
     /**
