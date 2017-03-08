@@ -115,11 +115,20 @@ class ArticleController extends Controller
 
     public function rights()
     {
-      return view('rights.all');
+      $rights = Article::where(['category' => 'human_rights'])->orderBy('id','DESC')->get()->toArray();
+      return view('rights.all', compact('rights'));
     }
 
     public function blog()
     {
-      return view('articles.blog');
+      $blogs = Article::where(['category' => 'blogs'])->orderBy('id','DESC')->get()->toArray();
+      return view('articles.blog', compact('blogs'));
     }
+
+    public function campaigns()
+    {
+        $campaigns = Article::where(['category' => 'campaigns'])->orderBy('id','DESC')->get()->toArray();
+        return view('articles.campaigns',compact('campaigns'));
+    }
+
 }

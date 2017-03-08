@@ -30,7 +30,7 @@ Route::get('/corrupt-officials','HeroController@shamed');
 Route::get('/situation','HeroController@situations');
 Route::post('/situation','HeroController@store');
 
-Route::get('/campaigns','CampaignController@index');
+Route::get('/campaigns','ArticleController@campaigns');
 
 Route::get('/admin','AdminController@users');
 Route::get('/admin/heros', 'AdminController@heros');

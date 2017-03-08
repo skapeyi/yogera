@@ -2,17 +2,17 @@
 
 @section('content')
   <div class="page-header">
-    <h2>From the blog</h3>
-    @if(empty($blogs))
+    <h2>Our Campaigns</h3>
+    @if(empty($campaigns))
       <div class="alert alert-info">
-          <strong>Info!</strong> No content at the moment!
+          <strong>Info!</strong> No Campaigns runninga at the moment!
       </div>
     @else
-      @foreach($blogs as $blog)
+      @foreach($campaigns as $campaign)
         <div class="panel">
           <div class="panel-body">
-            <h3>{{$blog['title']}}</h3>
-            {!! $blog['content']!!}
+            <h3>{{$campaign['title']}}</h3>
+            {!! $campaign['content']!!}
           </div>
         </div>
       @endforeach

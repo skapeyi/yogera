@@ -11,7 +11,7 @@
   <div class="row">
     <div class="alert alert-info">
         <strong>Info!</strong> No people shamed yet!
-  </div>
+    </div>
   </div>
 
   <div class="row">
