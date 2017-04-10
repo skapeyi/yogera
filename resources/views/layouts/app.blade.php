@@ -58,7 +58,7 @@
             <ul class="nav navbar-nav navbar-right">
               <li class="dropdown">
                 <a aria-expanded="false" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" ria-expanded="false">
-                  Heros and Villains  <span class="caret"></span>
+                  Celebrate/Shame  <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu" role="menu">
                   <li><a href="/heros">Our heros</a></li>

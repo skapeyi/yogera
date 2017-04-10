@@ -5,7 +5,7 @@
 @if(empty($heros))
 <div class="container">
   <div class="page-header">
-    <h3>Our Celeberated Heros</h3>
+    <h3>Shamed persons</h3>
   </div>
 
   <div class="row">
@@ -20,7 +20,7 @@
           <p class="lead">Don't be quiet about such people. Exposing them will create less and less of them. </p>
 
           <div class="buttons" style="margin-bottom:10px;">
-              <a href="/celebrate-a-person" class="btn btn-md btn-primary btn-lg">Shame A Person </i></a>
+              <a href="/shame-a-person" class="btn btn-md btn-primary btn-lg">Shame A Person </i></a>
           </div>
       </div>
   </div>
@@ -30,13 +30,13 @@
 @else
 <div class="container">
   <div class="page-header">
-    <h3>Our Celeberated Heros</h3>
+    <h3>Shamed Person</h3>
   </div>
 
   <div class="row">
     @foreach ($heros as $hero)
 
-      <div class="col-md-6">
+      <div class="col-md-4">
           <div class="panel panel-info">
               <div class="panel-heading">
                   <h4>{{$hero['person']}} - {{$hero['organisation']}}</h4>

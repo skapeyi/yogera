@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Hero;
-use Illuminate\Support\Facades\Auth;
+use App\Situation;
 
-class HeroController extends Controller
+class SituationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,7 @@ class HeroController extends Controller
      */
     public function index()
     {
-        return redirect('/admin/users');
+        //
     }
 
     /**
@@ -25,17 +24,7 @@ class HeroController extends Controller
      */
     public function create()
     {
-        return view('heros.create');
-    }
-
-    public function createShame()
-    {
-        return view('heros.shame');
-    }
-
-    public function shame()
-    {
-        return view('heros.shame');
+        return view('situations.create');
     }
 
     /**
@@ -46,28 +35,20 @@ class HeroController extends Controller
      */
     public function store(Request $request)
     {
-        if(Auth::check()){
-          $user_id = Auth::user()->id;
-        }
-        else{
-          $user_id = 2;
-        }
-        $hero = new Hero();
-        $hero->type = $request->type;
-        $hero->person = $request->person;
-        $hero->sector = $request->sector;
-        $hero->organisation = $request->organization;
-        $hero->region = $request->region;
-        $hero->gender = $request->gender;
-        $hero->reason = $request->reason;
-        $hero->created_by = $user_id;
+        $s = new Situation();
+        $s->name = $request->name;
+        $s->reason = $request->reason;
+        $s->category = $request->category;
+        $s->report_to = $request->report_to;
+        $s->status = $request->status;
 
-        if($hero->save()){
-          flash("Your information has been saved and will be visible once approved!","success");
+        if($s->save()){
+          flash("Your Situation has been saved and will be followed up!","success");
           return redirect('/home');
         }
         else{
-          flash("Something went wrong while processing your request, please try again later.","error");
+          flash("Something went wrong while processing your request. Please try again.","error");
+          return redirect('/situation');
         }
     }
 
@@ -114,20 +95,5 @@ class HeroController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function heros(){
-      $heros = Hero::where(['type' =>'hero'])->get()->toArray();
-      return view('heros.all', compact('heros'));
-    }
-
-    public function shamed(){
-      $heros = Hero::where(['type' =>'shame'])->get()->toArray();
-      return view('heros.shamed', compact('heros'));
-    }
-
-    public function situations()
-    {
-      return view('situations.all');
     }
 }

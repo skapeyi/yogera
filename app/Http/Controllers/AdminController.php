@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Hero;
 use App\Article;
+use App\Situation;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -34,7 +36,8 @@ class AdminController extends Controller
     }
 
     public function situations(){
-        return view('admin.situation.situation');
+        $situations = Situation::get();
+        return view('admin.situation.situation',compact('situations'));
     }
 
     public function campaigns(){
@@ -48,7 +51,7 @@ class AdminController extends Controller
     }
 
     public function opinions(){
-      $opinions = Article::where(['category' =>'public_opinions'])->get()->toArray();
+      $opinions = Article::where(['category' =>'public_opinion'])->get()->toArray();
       return view('admin.opinions.all', compact('opinions'));
     }
 

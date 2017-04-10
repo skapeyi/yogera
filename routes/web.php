@@ -24,11 +24,11 @@ Route::get('/celebrate-a-person', 'HeroController@create');
 Route::get('/heros', 'HeroController@heros');
 Route::post('heros', 'HeroController@store');
 
-Route::get('/shame-a-person', 'HeroController@shame');
+Route::get('/shame-a-person', 'HeroController@createShame');
 Route::get('/corrupt-officials','HeroController@shamed');
 
-Route::get('/situation','HeroController@situations');
-Route::post('/situation','HeroController@store');
+Route::get('/situation','SituationController@create');
+Route::post('/situation','SituationController@store');
 
 Route::get('/campaigns','ArticleController@campaigns');
 

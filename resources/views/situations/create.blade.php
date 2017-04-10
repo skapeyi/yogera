@@ -3,45 +3,36 @@
 @section('content')
 <div class="container">
   <div class="page-header">
-    <h3>Celebrate a Person</h3>
+    <h3>Report a situation</h3>
   </div>
   <div class="row">
     <div class="col-md-10 col-md-offset-2">
       <div class="panel panel-default">
         <div class="panel-body">
-          {!! Form::open(['action' => 'HeroController@store']) !!}
+          {!! Form::open(['action' => 'SituationController@store']) !!}
+
           <div class="form-group">
-            {!! Form::hidden('type', 'hero', ['class' => 'form-control']) !!}
+            {!! Form::label('name','Person\'s Full Names')!!}
+            {!! Form::text('name', '', ['class' => 'form-control']) !!}
           </div>
 
           <div class="form-group">
-            {!! Form::label('person','Person\'s Full Names')!!}
-            {!! Form::text('person', '', ['class' => 'form-control']) !!}
-          </div>
-
-          <div class="form-group">
-            {!! Form::label('sector','Area of work') !!}
-            {!! Form::select('sector', ['public' => 'Public sector', 'private' => 'Private Sector',"other" => "Other"], null,['class' => 'form-control']) !!}
-          </div>
-
-          <div class="form-group">
-            {!! Form::label('organization','Person\'s Organization')!!}
-            {!! Form::text('organization', '', ['class' => 'form-control']) !!}
-          </div>
-
-          <div class="form-group">
-            {!! Form::label('region','Region') !!}
-            {!! Form::select('region', ['central' => 'Central region', 'Western' => 'Western region','Eastern' => 'Eastern region','Northen' => 'Northen region'], null,['class' => 'form-control']) !!}
-          </div>
-
-          <div class="form-group">
-            {!! Form::label('gender','Gender') !!}
-            {!! Form::select('gender', ['male' => 'Male', 'female' => 'Female'], null,['class' => 'form-control']) !!}
-          </div>
-
-          <div class="form-group">
-            {!! Form::label('reason','Why are you celebrating this person?') !!}
+            {!! Form::label('reason','Describe your situation?') !!}
             {!! Form::textarea('reason', '',['class' => 'form-control','id' => 'reason']) !!}
+          </div>
+
+          <div class="form-group">
+            {!! Form::label('category','Category') !!}
+            {!! Form::select('category', ['health' => 'Health', 'agriculture' => 'Agriculture',"education" => "Education","other" => "Other"], null,['class' => 'form-control']) !!}
+          </div>
+
+          <div class="form-group">
+            {!! Form::label('report_to','Concerned Parties') !!}
+            {!! Form::select('report_to', ['LCI' => 'LCI', 'Minister' => 'Area Minister','Police' => 'Police'], null,['class' => 'form-control']) !!}
+          </div>
+
+          <div class="form-group">
+            {!! Form::hidden('status', 'open', ['class' => 'form-control']) !!}
           </div>
 
           <div class="form-group">

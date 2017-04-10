@@ -13,7 +13,42 @@
 
                 </div>
             </div>
+            <div class="row">
+                <h2>Sponsors</h2>
 
+
+
+
+                <div class="col-md-3">
+                    <div class="panel panel-primary">
+                        <h4>Hivos</h4>
+                        <a href="https://www.hivos.org/" target="_blank"><img src="http://socialsafari.org/wp-content/uploads/logo-Hivos-1024x594.jpg" class="img-responsive"></a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-primary">
+                        <h4>Indigo Trust</h4>
+                        <a href="https://indigotrust.org.uk/" target="_blank"><img src="https://sobanukirwa.rw/assets/indigo-trust-logo-22ce3bb153f5602614e0aac11491b2b2.jpg" class="img-responsive"></a>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="panel panel-primary">
+                        <h4>British Council</h4>
+                        <a href="https://www.britishcouncil.org" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/1/19/British_Council_logo.svg" class="img-responsive"></a>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="panel panel-primary">
+                        <h4>My Society</h4>
+                        <a href="https://www.mysociety.org/" target="_blank"><img src="https://www.mysociety.org/files/2014/11/mysociety-logo.jpg" class="img-responsive"></a>
+                    </div>
+                </div>
+
+
+
+            </div>
             <div class="row">
                 <h2>Partners</h2>
 

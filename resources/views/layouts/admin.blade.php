@@ -124,7 +124,7 @@
                       <li><a href="/admin/situations">Situations</a></li>
                       <li><a href="/admin/campaigns">Campaigns</a></li>
                       <li><a href="/admin/opinions">Public Opinions</a></li>
-                      <li><a href="/admin/rights">Human Rights Articles</a></li>                      
+                      <li><a href="/admin/rights">Human Rights Articles</a></li>
                       <li><a href="/admin/parliament">Parliamentary Discussions</a></li>
 
                   </ul>

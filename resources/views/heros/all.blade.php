@@ -36,7 +36,7 @@
   <div class="row">
     @foreach ($heros as $hero)
 
-      <div class="col-md-6">
+      <div class="col-md-4">
           <div class="panel panel-info">
               <div class="panel-heading">
                   <h4>{{$hero['person']}} - {{$hero['organisation']}}</h4>
