@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Article;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -24,8 +26,9 @@ class HomeController extends Controller
     public function index()
     {
         $page_title = "Be Heard";
-        $opinions = "";
-        return view('welcome', compact('page_title'));
+        $opinions = Article::where(['category' => 'public_opinion'])->orderBy('id','DESC')->get()->toArray();
+        $campaigns = Article::where(['category' => 'campaigns'])->orderBy('id','DESC')->get()->toArray();
+        return view('welcome', compact('page_title','opinions','campaigns'));
     }
 
     public function contact(){

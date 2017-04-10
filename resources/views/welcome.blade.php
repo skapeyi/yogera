@@ -94,18 +94,18 @@
   <div class="container">
     <div class="row">
       <div class="header-section text-center">
-        <h1>Latest Public Opinions</h1>
+        <h1>Our campaigns</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,<br> maiores, magni dolorum aliquam.</p>
 
         <hr class="bottom-line">
       </div>
       <div class="col-md-4 col-sm-6">
         <div class="service-box text-center">
-          <div class="icon-box">
+          <!-- <div class="icon-box">
             <i class="fa fa-html5 color-green"></i>
-          </div>
+          </div> -->
           <div class="icon-text">
-            <h4 class="ser-text">The handshake</h4>
+            <h4 class="ser-text">Fight Female Genital Mutilation</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,maiores, magni dolorum aliquam.</p>
             <a href="#." class="btn btn-success">Learn more</a>
           </div>
@@ -113,11 +113,11 @@
       </div>
       <div class="col-md-4 col-sm-6">
         <div class="service-box text-center">
-          <div class="icon-box">
+          <!-- <div class="icon-box">
             <i class="fa fa-css3 color-green"></i>
-          </div>
+          </div> -->
           <div class="icon-text">
-            <h4 class="ser-text">The something bill</h4>
+            <h4 class="ser-text">#FreeStellaNyanzi</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,maiores, magni dolorum aliquam.</p>
             <a href="#." class="btn btn-success">Learn more</a>
           </div>
@@ -125,9 +125,9 @@
       </div>
       <div class="col-md-4 col-sm-6">
         <div class="service-box text-center">
-          <div class="icon-box">
+          <!-- <div class="icon-box">
             <i class="fa fa-joomla color-green"></i>
-          </div>
+          </div> -->
           <div class="icon-text">
             <h4 class="ser-text">Liberation day</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,maiores, magni dolorum aliquam.</p>
