@@ -66,7 +66,15 @@
                 </ul>
               </li>
 
-              <li><a href="/situation">Report a situation</a></li>
+              <li class="dropdown">
+                <a aria-expanded="false" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" ria-expanded="false">
+                  Situations  <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="/situation">Report a situation</a></li>
+                  <li><a href="/reported-situations">Reported Situations</a></li>
+                </ul>
+              </li>
               <li><a href="/know-your-rights">Know Your rights</a></li>
               <li><a href="/campaigns">Our campaigns</a></li>
               <li class="dropdown">

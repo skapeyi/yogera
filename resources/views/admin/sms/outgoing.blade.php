@@ -113,10 +113,10 @@
       		$('#outgoing-table').DataTable({
 		        processing: true,
 		        serverSide: true,
-         		ajax: '{!! url('get_incoming_sms') !!}',
+         		ajax: '{!! url('get_outgoing_sms') !!}',
          		columns: [
             		{ data: 'to', name: 'to' },
-            		{ data: 'text', name: 'text' },
+            		{ data: 'message', name: 'message' },
             		{ data: 'status', name: 'status' },
             		{ data: 'created_at', name: 'created_at'}
           		]

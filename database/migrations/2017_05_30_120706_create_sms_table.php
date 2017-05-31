@@ -25,6 +25,7 @@ class CreateSmsTable extends Migration
             $table->string('status')->nullable();
             $table->string('aft_id')->nullable();
             $table->string('date')->nullable();
+            $table->string('cost')->nullable();
         });
 
          //Logging for bulk sms 

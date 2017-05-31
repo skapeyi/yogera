@@ -96,4 +96,8 @@ class SituationController extends Controller
     {
         //
     }
+
+    public function reported(){
+        return view('situations.reported');
+    }
 }

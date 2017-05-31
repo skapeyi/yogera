@@ -20,13 +20,13 @@
 @push('scripts')	
 	<script>
 		jQuery(document).ready(function($){
-      		$('#blogs-table').DataTable({
+      		$('#incoming').DataTable({
 		        processing: true,
 		        serverSide: true,
          		ajax: '{!! url('get_incoming_sms') !!}',
          		columns: [
             		{ data: 'from', name: 'from' },
-            		{ data: 'text', name: 'text' },
+            		{ data: 'message', name: 'message' },
             		{ data: 'date', name: 'date'}
           		]
       		});

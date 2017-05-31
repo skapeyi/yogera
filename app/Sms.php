@@ -11,11 +11,6 @@ class Sms extends Model
     const STATUS_NOT_APPROVED = 0;
 
     protected $fillable = [
-      'type','messageId','from','to','message','status','aft_id','date'
-    ];
-
-    protected $attributes =[
-      'approved' => self::STATUS_NOT_APPROVED,
-      'discussion_id' => 0
-    ];
+      'type','messageId','from','to','message','status','aft_id','date','cost'
+    ];    
 }

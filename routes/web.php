@@ -29,6 +29,7 @@ Route::get('/corrupt-officials','HeroController@shamed');
 
 Route::get('/situation','SituationController@create');
 Route::post('/situation','SituationController@store');
+Route::get('/reported-situations', 'SituationController@reported');
 
 Route::get('/campaigns','ArticleController@campaigns');
 
