@@ -15,43 +15,34 @@
       </div>
 
       <div class="panel-body">
-          <table class="table table-striped" id="users-table">
+          <table class="table table-striped" id="campaign-table">
               <thead>
-              <tr>
-                  <th>#</th>
+              <tr>                  
                   <th>Title</th>
                   <th>Content</th>
                   <th>Created</th>
-                  <th>Action</th>
-
               </tr>
               </thead>
-              <tbody>
-              @php
-              $i = 1
-              @endphp
-
-              @foreach($campaigns as $campaign)
-                  <tr>
-                      <td>{{$i}}</td>
-                      <td>{{$campaign["title"]}}</td>
-                      <td>{!! $campaign["content"] !!}</td>
-                      <td>{{date('d/M/y',strtotime($campaign["created_at"]))}}</td>
-                      <td>
-                          <p data-placement="top" data-toggle="tooltip" title="Delete">
-                              <button class="btn btn-danger btn-xs" data-title="Delete"><span
-                                          class="glyphicon glyphicon-trash"></span> Delete
-                              </button>
-                          </p>
-                      </td>
-                  </tr>
-                  @php
-                  $i++;
-                  @endphp
-              @endforeach
-              </tbody>
+             
           </table>
       </div>
   </div>
 
 @endsection
+
+@push('scripts')
+  <script type="text/javascript">
+    jQuery(document).ready(function($){
+      $('#campaign-table').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: '{!! url('get_campaigns')!!}',
+        columns: [
+          { data: 'title', name: 'title' },
+          { data: 'content', name: 'content'},
+          { data: 'created_at', name: 'created_at'}
+        ]
+      });
+    });
+  </script>
+@endpush

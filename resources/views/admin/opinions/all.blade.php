@@ -13,44 +13,33 @@
         </div>
     </div>
     <div class="panel-body">
-        <table class="table table-striped" id="users-table">
+        <table class="table table-striped" id="opinions-table">
             <thead>
-            <tr>
-                <th>#</th>
+            <tr>                
                 <th>Title</th>
                 <th>Content</th>
                 <th>Created</th>
-                <th>Action</th>
-
-            </tr>
-            </thead>
-            <tbody>
-            @php
-            $i = 1
-            @endphp
-
-            @foreach($opinions as $opinion)
-                <tr>
-                    <td>{{$i}}</td>
-                    <td>{{$opinion["title"]}}</td>
-                    <td>{!! $opinion["content"] !!}</td>
-                    <td>{{date('d/M/y',strtotime($opinion["created_at"]))}}</td>
-                    <td>
-                        <p data-placement="top" data-toggle="tooltip" title="Delete">
-                            <button class="btn btn-danger btn-xs" data-title="Delete"><span
-                                        class="glyphicon glyphicon-trash"></span> Delete
-                            </button>
-                        </p>
-                    </td>
-                </tr>
-                @php
-                $i++;
-                @endphp
-            @endforeach
-            </tbody>
+            </thead>            
         </table>
     </div>
 
   </div>
 
 @endsection
+@push('scripts')
+  <script type="text/javascript">
+    jQuery(document).ready(function($){
+      $('#opinions-table').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: '{!! url('get_opinions')!!}',
+        columns: [
+          { data: 'title', name: 'title' },
+          { data: 'content', name: 'content'},
+          { data: 'created_at', name: 'created_at'}
+        ]
+      });
+    });
+  </script>
+@endpush
+

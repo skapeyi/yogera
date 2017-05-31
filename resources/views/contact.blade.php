@@ -2,23 +2,9 @@
 
 @section('content')
     <div class="container" id="content-container">
-        <div class="row">
-            <div class="col-md-4">
-                <address>
-                    <h3>Office Location</h3>
-                    <p class="lead"><a
-                                href="https://www.google.com/maps/place/Hive+Colab/@0.3418368,32.5922385,17z/data=!3m1!4b1!4m5!3m4!1s0x177dbbb1d0fdf0ef:0xde67114eec99fb00!8m2!3d0.3418314!4d32.5944272"
-                                target="_blank">
-                            HiveColab</a><br>
-                        Plot 90, Kanjokya Street<br>
-                        4th Floor, Kanjokya House,<br>
-                        Kampala, Uganda </p>
-                    <p><i class="fa fa-clock-o"></i>&nbsp;Monday - Friday: 7am - 8pm<br>
-                        <i class="fa fa-clock-o"></i>&nbsp;Saturday: 8am - 6pm</p>
-                </address>
-            </div>
+        <div class="row">        
 
-            <div class="col-md-8">
+            <div class="col-md-10 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <form role="form" action="" method="post">

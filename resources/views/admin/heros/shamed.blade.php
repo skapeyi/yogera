@@ -5,35 +5,41 @@
   <h3>Shamed persons</h3>
 </div>
 
-<div class="panel panel-primary">
-  <table class="table table-striped table-responsive">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Organization</th>
-        <th>Gender</th>
-        <th>Region</th>
-        <th>Reason</th>
-        <th>Approved</th>
-        <th>Created</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      @foreach($shamed as $shame)
+<div class="panel panel-default">
+  <div class="panel-body">
+    <table class="table table-striped table-responsive" id="heroes-table">
+      <thead>
         <tr>
-          <td>{{$shame['person']}}</td>
-          <td>{{$shame['organisation']}}</td>
-          <td>{{$shame['gender']}}</td>
-          <td>{{$shame['region']}}</td>
-          <td>{!! $shame['reason'] !!}</td>
-          <td></td>
-          <td>{{ date('d/M/y',strtotime($shame["created_at"])) }}</td>
-          <td></td>
+          <th>Name</th>
+          <th>Organization</th>
+          <th>Sector</th>
+          <th>Gender</th>
+          <th>Region</th>
+          <th>Created</th>
         </tr>
-      @endforeach
-    </tbody>
-  </table>
+      </thead>    
+    </table>
+  </div>  
 </div>
 
 @endsection
+
+@push('scripts')
+  <script type="text/javascript">
+    jQuery(document).ready(function($){
+      $('#heroes-table').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: '{!! url('get_shames')!!}',
+        columns: [
+          { data: 'person', name: 'person' },
+          { data: 'organisation', name: 'organisation'},
+          { data: 'sector', name: 'sector'},
+          { data: 'gender', name: 'gender'},
+          { data: 'region', name: 'region'},
+          { data: 'created_at', name: 'created_at'},
+        ]
+      });
+    });
+  </script>
+@endpush

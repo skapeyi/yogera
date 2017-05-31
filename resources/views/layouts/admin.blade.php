@@ -126,6 +126,8 @@
                       <li><a href="/admin/opinions">Public Opinions</a></li>
                       <li><a href="/admin/rights">Human Rights Articles</a></li>
                       <li><a href="/admin/parliament">Parliamentary Discussions</a></li>
+                      <li><a href="/admin/incoming-sms">Incoming Messages</a></li>
+                      <li><a href="/admin/outgoing-sms">Outgoing Messages</a></li>
 
                   </ul>
               </div>
@@ -156,5 +158,6 @@
   <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
   <script src="https://code.highcharts.com/highcharts.js"></script>
   <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  @stack('scripts')
 </body>
 </html>

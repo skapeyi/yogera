@@ -40,4 +40,16 @@ class HomeController extends Controller
         $page_title = "About Us";
         return view ('about', compact('page_title'));
     }
+
+    public function faq(){
+        return view('faq');
+    }
+
+    public function privacy(){
+        return view('privacy');
+    }
+
+    public function terms(){
+        return view('terms');
+    }
 }

@@ -183,6 +183,8 @@ return [
         */        
         Collective\Html\HtmlServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
+        Yajra\Datatables\DatatablesServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class,
 
     ],
 
@@ -232,7 +234,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
-
+        'Datatables' => Yajra\Datatables\Facades\Datatables::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
     ],
-
 ];

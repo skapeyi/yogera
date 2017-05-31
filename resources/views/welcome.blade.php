@@ -99,42 +99,21 @@
 
         <hr class="bottom-line">
       </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="service-box text-center">
-          <!-- <div class="icon-box">
-            <i class="fa fa-html5 color-green"></i>
-          </div> -->
-          <div class="icon-text">
-            <h4 class="ser-text">Fight Female Genital Mutilation</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,maiores, magni dolorum aliquam.</p>
-            <a href="#." class="btn btn-success">Learn more</a>
+      @foreach($campaigns as $campaign)
+        <div class="col-md-4 col-sm-6">
+          <div class="service-box text-center">
+            <!-- <div class="icon-box">
+              <i class="fa fa-html5 color-green"></i>
+            </div> -->
+            <div class="icon-text">
+              <h5 class="ser-text">{{ $campaign['title']}}</h5>
+              <p class="center-justify">{!! substr($campaign['content'],0, 400) !!}....</p>
+              <a href="/campaigns" class="btn btn-success">Learn more</a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="service-box text-center">
-          <!-- <div class="icon-box">
-            <i class="fa fa-css3 color-green"></i>
-          </div> -->
-          <div class="icon-text">
-            <h4 class="ser-text">#FreeStellaNyanzi</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,maiores, magni dolorum aliquam.</p>
-            <a href="#." class="btn btn-success">Learn more</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="service-box text-center">
-          <!-- <div class="icon-box">
-            <i class="fa fa-joomla color-green"></i>
-          </div> -->
-          <div class="icon-text">
-            <h4 class="ser-text">Liberation day</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,maiores, magni dolorum aliquam.</p>
-            <a href="#." class="btn btn-success">Learn more</a>
-          </div>
-        </div>
-      </div>
+      @endforeach    
+      
     </div>
   </div>
 </section>

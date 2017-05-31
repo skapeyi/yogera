@@ -42,7 +42,7 @@
                   <h4>{{$hero['person']}} - {{$hero['organisation']}}</h4>
               </div>
               <div class="panel-body">
-                {!! substr($hero['reason'],0, 500) !!} [.........]
+                {!! substr($hero['reason'],0, 150) !!}...
               </div>
               <div class="panel-footer" style="min-height: 50px;">
                   <div class="btn-group pull-right">
@@ -59,7 +59,7 @@
   <div class="row">
       <div class="col-sm-8 col-sm-offset-2 text-center">
           <h1>Tell us about your hero.</h1>
-          <p class="lead">Let us spread the work about heros and encourage more to do the same! </p>
+          <p class="lead">Let us support the honest public officer in public service and encourage others to follow their footsteps. </p>
 
           <div class="buttons" style="margin-bottom:10px;">
               <a href="/celebrate-a-person" class="btn btn-md btn-primary btn-lg">Celebrate A Person </i></a>

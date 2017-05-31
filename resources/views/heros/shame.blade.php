@@ -40,7 +40,7 @@
           </div>
 
           <div class="form-group">
-            {!! Form::label('reason','Why are you celebrating this person?') !!}
+            {!! Form::label('reason','Why are you shaming this person?') !!}
             {!! Form::textarea('reason', '',['class' => 'form-control','id' => 'reason']) !!}
           </div>
 

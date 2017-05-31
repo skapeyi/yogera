@@ -43,3 +43,30 @@ Route::get('/admin/rights','AdminController@rights');
 Route::get('/admin/opinions', 'AdminController@opinions');
 Route::get('/admin/parliament','AdminController@parliaments');
 Route::get('/admin/blogs','AdminController@blogs');
+Route::get('/admin/incoming-sms','SmsController@incoming_sms');
+Route::get('/admin/outgoing-sms','SmsController@outgoing_sms');
+
+//Resources
+Route::get('/get_users','ResourceController@get_users');
+Route::get('/get_blogs','ResourceController@get_blogs');
+Route::get('/get_heroes','ResourceController@get_heroes');
+Route::get('/get_shames','ResourceController@get_shames');
+Route::get('/get_campaigns','ResourceController@get_campaigns');
+Route::get('/get_opinions','ResourceController@get_opinions');
+Route::get('/get_rights','ResourceController@get_rights');
+Route::get('/get_parliament_discussions','ResourceController@get_parliament_discussions');
+Route::get('/get_situations','ResourceController@get_situations');
+Route::get('/get_incoming_sms','ResourceController@get_incoming_sms');
+Route::get('/get_outgoing_sms','ResourceController@get_outgoing_sms');
+
+//pages
+Route::get('/privacy','HomeController@privacy');
+Route::get('/faq', 'HomeController@faq');
+Route::get('/terms-and-conditions','HomeController@terms');
+
+//sms
+Route::post('/send_single_sms','SmsController@send_single_sms');
+Route::post('/send_bulk_sms','SmsController@send_bulk_sms');
+Route::post('/ait_delivery_call_back','SmsController@ait_delivery_call_back');
+Route::post('/shortcode_message_call_back','SmsController@shortcode_message_call_back');
+
