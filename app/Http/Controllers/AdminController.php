@@ -69,11 +69,11 @@ class AdminController extends Controller
 
       if($hero->save()){
         flash()->success('Details updated');
-        return redirect('/admin/heros');
+        return redirect("/admin/$id/heros");
       }
       else{
         flash()->error('Something went wrong');
-        return redirect('/admin/heros');
+        return redirect("/admin/$id/heros");
       }
     }
 
@@ -83,7 +83,8 @@ class AdminController extends Controller
     }
 
     public function editSituation($id){
-
+      $situation = Situation::find($id);
+      return view('admin.situation.view', compact($situation));
     }
 
     public function updateSituation(Request $request, $id){
@@ -117,10 +118,25 @@ class AdminController extends Controller
     }
 
     public function editArticle($id){
-
+      $article = Article::find($id);
+      return view('admin.blogs.view', compact('article'));
     }
 
     public function updateArticle(Request $request, $id){
+      $article = Article::find($id);
+      $article->deleted = $request->deleted;
+      $article->approved = $request->approved;
+      $article->content = $request->content;
+      $article->title = $request->title;
+      $article->category = $request->category;
 
+      if($article->save()){
+        flash()->success('Details updated');
+        return redirect("/admin/$id/article");
+      }
+      else{
+        flash()->error('Something went wrong');
+        return redirect("/admin/$id/article");
+      }
     }
 }

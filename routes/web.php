@@ -50,6 +50,10 @@ Route::get('/admin/rights','AdminController@rights');
 Route::get('/admin/opinions', 'AdminController@opinions');
 Route::get('/admin/parliament','AdminController@parliaments');
 Route::get('/admin/blogs','AdminController@blogs');
+
+Route::get('/admin/{id}/article','AdminController@editArticle');
+Route::put('/admin/{id}/article', array('as' => 'article.manage','uses' => 'AdminController@updateArticle'));
+
 Route::get('/admin/incoming-sms','SmsController@incoming_sms');
 Route::get('/admin/outgoing-sms','SmsController@outgoing_sms');
 

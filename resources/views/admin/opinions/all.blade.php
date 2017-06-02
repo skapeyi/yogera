@@ -19,6 +19,7 @@
                 <th>Title</th>
                 <th>Content</th>
                 <th>Created</th>
+                <th>Edit</th>
             </thead>            
         </table>
     </div>
@@ -36,7 +37,8 @@
         columns: [
           { data: 'title', name: 'title' },
           { data: 'content', name: 'content'},
-          { data: 'created_at', name: 'created_at'}
+          { data: 'created_at', name: 'created_at'},
+          { data: 'edit', name: 'edit'}
         ]
       });
     });
