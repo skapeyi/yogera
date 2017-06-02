@@ -16,6 +16,7 @@
           <th>Gender</th>
           <th>Region</th>
           <th>Created</th>
+          <th>Edit</th>
         </tr>
       </thead>    
     </table>
@@ -38,6 +39,7 @@
           { data: 'gender', name: 'gender'},
           { data: 'region', name: 'region'},
           { data: 'created_at', name: 'created_at'},
+          { data: 'edit', name: 'edit'}
         ]
       });
     });

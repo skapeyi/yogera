@@ -13,7 +13,8 @@
                     <tr>                        
                         <th>Name</th>
                         <th>Email</th>
-                        <th>Joined</th>                    
+                        <th>Joined</th>
+                        <th>Actions</th>                    
                     </tr>
                 </thead>
              
@@ -32,7 +33,8 @@
             columns: [
               { data: 'name', name: 'name'},
               { data: 'email', name: 'email' },
-              { data: 'created_at', name: 'created_at' },            
+              { data: 'created_at', name: 'created_at' },
+              { data: 'edit', name: 'edit'}            
             ]
           });
       });

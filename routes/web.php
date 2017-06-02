@@ -34,8 +34,14 @@ Route::get('/reported-situations', 'SituationController@reported');
 Route::get('/campaigns','ArticleController@campaigns');
 
 Route::get('/admin','AdminController@users');
+Route::get('/admin/{id}/user', 'AdminController@editUser');
+Route::put('/admin/{id}/user', array('as' => 'user.manage','uses' => 'AdminController@updateUser'));
 Route::get('/admin/heros', 'AdminController@heros');
 Route::get('/admin/shames', 'AdminController@shamed');
+
+Route::get('/admin/{id}/heros','AdminController@editHero');
+Route::put('/admin/{id}/heros', array('as' => 'hero.manage','uses' => 'AdminController@updateHero'));
+
 Route::get('/admin/situations', 'AdminController@situations');
 Route::get('/admin/articles', 'AdminController@articles');
 Route::get('/admin/stats','AdminController@stats');

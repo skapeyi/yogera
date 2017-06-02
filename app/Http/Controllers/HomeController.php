@@ -52,4 +52,8 @@ class HomeController extends Controller
     public function terms(){
         return view('terms');
     }
+
+    public function how_to(){
+        return view('how_to');
+    }
 }

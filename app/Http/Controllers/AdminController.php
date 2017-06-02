@@ -7,6 +7,7 @@ use App\User;
 use App\Hero;
 use App\Article;
 use App\Situation;
+use Log;
 use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
@@ -16,14 +17,34 @@ class AdminController extends Controller
         $this->middleware('auth');
     }
 
+    public function stats(){
+        return view('admin.stats.all');
+    }
+
     public function users(){
         $users = User::orderBy('id','DESC')->get()->toArray();
         return view('admin.users.all', compact('users'));
     }
 
-    public function stats(){
-        return view('admin.stats.all');
+    public function editUser($id){
+      $user = User::find($id);
+      return view('admin.users.edit', compact('user'));
     }
+
+    public function updateUser(Request $request, $id){
+      Log::info($request);
+      $user = User::find($id);
+      $user->deleted = $request->deleted;
+      $user->approved = $request->deleted;
+
+      if($user->save()){
+        flash()->success('Account updated');
+        return redirect('/admin');
+      }
+      else{
+        flash()->error('Something went wrong, try again later!');
+      }
+    }    
 
     public function heros(){
       $heros = Hero::where(['type' => 'hero'])->orderBy('id','DESC')->get()->toArray();
@@ -35,9 +56,38 @@ class AdminController extends Controller
       return view('admin.heros.shamed', compact('shamed'));
     }
 
+    public function editHero($id){
+      $hero = Hero::find($id);
+      return view('admin.heros.view', compact('hero'));
+    }
+
+    public function updateHero(Request $request, $id){
+      Log::info($request);
+      $hero = Hero::find($id);
+      $hero->approved = $request->approved;
+      $hero->deleted = $request->deleted;
+
+      if($hero->save()){
+        flash()->success('Details updated');
+        return redirect('/admin/heros');
+      }
+      else{
+        flash()->error('Something went wrong');
+        return redirect('/admin/heros');
+      }
+    }
+
     public function situations(){
         $situations = Situation::get();
         return view('admin.situation.situation',compact('situations'));
+    }
+
+    public function editSituation($id){
+
+    }
+
+    public function updateSituation(Request $request, $id){
+
     }
 
     public function campaigns(){
@@ -64,5 +114,13 @@ class AdminController extends Controller
     public function blogs(){
       $blogs = Article::where(['category' =>'blogs'])->get()->toArray();
       return view('admin.blogs.all', compact('blogs'));
+    }
+
+    public function editArticle($id){
+
+    }
+
+    public function updateArticle(Request $request, $id){
+
     }
 }
