@@ -18,7 +18,7 @@
    <div class="row">
       <div class="col-sm-8 col-sm-offset-2 text-center">
           <h1>Report a situation.</h1>
-          <p class="lead">Dont let any incident go unreported. </p>
+          <p class="lead">Your voice help improve public service delivery in Uganda. Seen something that is not right in your community hospital, school, public office, community and the neighborhood? do not be quiet speak out. We will ensure that the right people get to know the situation and work upon it for improved communities through better public service delivery. Let our leaders know what is happening and together our voice can influence the desired change. Do not be quiet. If you see it, know it, REPORT IT.</p>
 
           <div class="buttons" style="margin-bottom:10px;">
               <a href="/situation" class="btn btn-md btn-primary btn-lg">Report A Situation </i></a>
@@ -60,7 +60,7 @@
   <div class="row">
       <div class="col-sm-8 col-sm-offset-2 text-center">
           <h1>Report a situation.</h1>
-          <p class="lead">Dont let any incident go unreported. </p>
+          <p class="lead">Your voice help improve public service delivery in Uganda. Seen something that is not right in your community hospital, school, public office, community and the neighborhood? do not be quiet speak out. We will ensure that the right people get to know the situation and work upon it for improved communities through better public service delivery. Let our leaders know what is happening and together our voice can influence the desired change. Do not be quiet. If you see it, know it, REPORT IT.</p>
 
           <div class="buttons" style="margin-bottom:10px;">
               <a href="/situation" class="btn btn-md btn-primary btn-lg">Report A Situation </i></a>

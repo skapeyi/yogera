@@ -43,6 +43,8 @@ Route::get('/admin/{id}/heros','AdminController@editHero');
 Route::put('/admin/{id}/heros', array('as' => 'hero.manage','uses' => 'AdminController@updateHero'));
 
 Route::get('/admin/situations', 'AdminController@situations');
+Route::get('/admin/{id}/situation','AdminController@editSituation');
+Route::put('/admin/{id}/situation', array('as' => 'situation.manage','uses' => 'AdminController@updateSituation'));
 Route::get('/admin/articles', 'AdminController@articles');
 Route::get('/admin/stats','AdminController@stats');
 Route::get('/admin/campaigns','AdminController@campaigns');
@@ -67,6 +69,14 @@ Route::get('/get_opinions','ResourceController@get_opinions');
 Route::get('/get_rights','ResourceController@get_rights');
 Route::get('/get_parliament_discussions','ResourceController@get_parliament_discussions');
 Route::get('/get_situations','ResourceController@get_situations');
+Route::get('/regions', [
+  	'uses' => 'RegionController@index',
+  	'as' => 'regions'
+  ]);
+Route::get('/regions/districts', [
+  	'uses' => 'RegionController@districts',
+  	'as' => 'regions.districts'
+  ]);
 Route::get('/get_incoming_sms','ResourceController@get_incoming_sms');
 Route::get('/get_outgoing_sms','ResourceController@get_outgoing_sms');
 

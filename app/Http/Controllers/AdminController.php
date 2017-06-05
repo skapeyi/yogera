@@ -84,11 +84,24 @@ class AdminController extends Controller
 
     public function editSituation($id){
       $situation = Situation::find($id);
-      return view('admin.situation.view', compact($situation));
+      $regions = DB::table('regions')->pluck('region', 'id');
+        $districts = DB::table('districts')->pluck('district', 'id');
+      return view('admin.situation.view', compact('situation','regions','districts'));
     }
 
     public function updateSituation(Request $request, $id){
+      $situation = Situation::find($id);
+      $situation->deleted = $request->deleted;
+      $situation->approved = $request->approved;
 
+      if($situation->save()){
+        flash()->success('Details updated');
+        return redirect("/admin/$id/situation");
+      }
+      else{
+        flash()->error('Something went wrong');
+        return redirect("/admin/$id/situation");
+      }
     }
 
     public function campaigns(){

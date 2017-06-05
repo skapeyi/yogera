@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Situation;
+use App\Distrct;
+use App\Region;
+use DB;
 
 class SituationController extends Controller
 {
@@ -23,8 +26,10 @@ class SituationController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('situations.create');
+    {   
+        $regions = DB::table('regions')->pluck('region', 'id');
+        $districts = DB::table('districts')->pluck('district', 'id');
+        return view('situations.create',compact('regions','districts'));
     }
 
     /**

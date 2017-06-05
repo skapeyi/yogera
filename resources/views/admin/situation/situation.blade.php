@@ -22,6 +22,7 @@
                 <th>Report To</th>
                 <th>Created</th>
                 <th>Status</th>
+                <th>Edit</th>
             </tr>
         </thead>        
     </table>
@@ -44,7 +45,8 @@
           { data: 'category', 'name': 'category'},
           { data: 'report_to', 'name': 'report_to'},
           { data: 'created_at', name: 'created_at'},
-          { data: 'status', name: 'status'}
+          { data: 'status', name: 'status'},
+          { data: 'edit', name: 'edit'}
         ]
       });
     });

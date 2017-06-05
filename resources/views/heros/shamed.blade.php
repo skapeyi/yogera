@@ -17,7 +17,7 @@
   <div class="row">
       <div class="col-sm-8 col-sm-offset-2 text-center">
           <h1>Tell us about this person.</h1>
-          <p class="lead">Don't be quiet about such people. Exposing them will create less and less of them. </p>
+          <p class="lead">They do not deserve to be in office, let's report them and get them out. Your voice can make a difference. No one is above the law.</p>
 
           <div class="buttons" style="margin-bottom:10px;">
               <a href="/shame-a-person" class="btn btn-md btn-primary btn-lg">Shame A Person </i></a>

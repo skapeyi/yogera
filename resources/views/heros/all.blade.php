@@ -59,7 +59,7 @@
   <div class="row">
       <div class="col-sm-8 col-sm-offset-2 text-center">
           <h1>Tell us about your hero.</h1>
-          <p class="lead">Let us support the honest public officer in public service and encourage others to follow their footsteps. </p>
+          <p class="lead">Know someone in a public office who is doing their best to serve their community? Appreciate them by celebrating them here! </p>
 
           <div class="buttons" style="margin-bottom:10px;">
               <a href="/celebrate-a-person" class="btn btn-md btn-primary btn-lg">Celebrate A Person </i></a>

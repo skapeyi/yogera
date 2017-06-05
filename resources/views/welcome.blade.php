@@ -25,7 +25,7 @@
     <div class="row">
       <div class="header-section text-center">
         <h2>Features</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,<br> maiores, magni dolorum aliquam.</p>
+        <p>Together our voice can bring the change we want. <br />Speak out! Yogera</p>
 
         <hr class="bottom-line">
       </div>
@@ -34,7 +34,7 @@
           <div class="col-md-4">
             <div class="heading pull-right">
               <h4>Celebrate a hero</h4>
-              <p>Donec et lectus bibendum dolor dictum auctor in ac erat. Vestibulum egestas sollicitudin metus non urna in eros tincidunt convallis id id nisi in interdum.</p>
+              <p>Know someone in a public office who is doing their best to serve their community? Appreciate them by celebrating them here. Don't let them go un-noticed!</p>
               <a href="/heros" class="btn btn-success">See our heros</a>
             </div>
             <div class="fea-img pull-left">
@@ -46,8 +46,8 @@
           <div class="col-md-4">
             <div class="heading pull-right">
               <h4>Report a situtation</h4>
-              <p>Donec et lectus bibendum dolor dictum auctor in ac erat. Vestibulum egestas sollicitudin metus non urna in eros tincidunt convallis id id nisi in interdum.</p>
-              <a href="/situation" class="btn btn-success">See Reported situation</a>
+              <p>Seen something that is not right in your community hospital, school, public office, community and the neighborhood? Do not be quiet speak out. </p>
+              <a href="/reported-situations" class="btn btn-success">See Reported situation</a>
             </div>
             <div class="fea-img pull-left">
               <i class="fa fa-bell"></i>
@@ -58,7 +58,7 @@
           <div class="col-md-4">
             <div class="heading pull-right">
               <h4>Know Your rights</h4>
-              <p>Donec et lectus bibendum dolor dictum auctor in ac erat. Vestibulum egestas sollicitudin metus non urna in eros tincidunt convallis id id nisi in interdum.</p>
+              <p>Did you know that if a traffic officer stops you, they are not allowed to get into your car? If an officer tries to do that, they are breaking the law!</p>
               <a href="/know-your-rights" class="btn btn-success">Know your rights</a>
             </div>
             <div class="fea-img pull-left">

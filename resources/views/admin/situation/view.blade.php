@@ -9,43 +9,45 @@
     <div class="col-md-10 col-md-offset-2">
       <div class="panel panel-default">
         <div class="panel-body">
-          {!! Form::open(['action' => 'SituationController@store']) !!}
-
+          {!! Form::model($situation,['method' => 'PUT', 'route' => ['situation.manage',$situation]]) !!}
           <div class="form-group">
             {!! Form::label('name','Person\'s Full Names')!!}
-            {!! Form::text('name', '', ['class' => 'form-control']) !!}
+            {!! Form::text('name', $situation->name, ['class' => 'form-control','disabled' => 'disabled']) !!}
           </div>
 
           <div class="form-group">
             {!! Form::label('reason','Describe your situation?') !!}
-            {!! Form::textarea('reason', '',['class' => 'form-control','id' => 'reason']) !!}
+            {!! Form::textarea('reason', $situation->reason,['class' => 'form-control','id' => 'reason','disabled' => 'disabled']) !!}
           </div>
 
           <div class="form-group">
             {!! Form::label('category','Category') !!}
-            {!! Form::select('category', ['health' => 'Health', 'agriculture' => 'Agriculture',"education" => "Education","other" => "Other"], null,['class' => 'form-control']) !!}
+            {!! Form::select('category', ['health' => 'Health', 'agriculture' => 'Agriculture',"education" => "Education","other" => "Other"], $situation->category,['class' => 'form-control','disabled' => 'disabled']) !!}
           </div>
 
           <div class="form-group">
             {!! Form::label('report_to','Concerned Parties') !!}
-            {!! Form::select('report_to', ['LCI' => 'LCI', 'Minister' => 'Area Minister','Police' => 'Police'], null,['class' => 'form-control']) !!}
+            {!! Form::select('report_to', ['LCI' => 'LCI', 'Minister' => 'Area Minister','Police' => 'Police'], $situation->report_to,['class' => 'form-control','disabled' => 'disabled']) !!}
           </div>
 
           <div class="form-group">
             {!! Form::label('region_id', 'Region')!!}
-            {!! Form::select('region_id', $regions, null, ['placeholder' => 'Choose Region','class' => 'form-control'])!!}
+            {!! Form::select('region_id', $regions, $situation->region_id, ['placeholder' => 'Choose Region','class' => 'form-control','disabled' => 'disabled'])!!}
           </div>
    
           <div class="form-group">
             {!! Form::label('district_id', 'District')!!}
-            {!! Form::select('district_id', $districts, null, ['placeholder' => 'Choose your district','class' => 'form-control'])!!}
+            {!! Form::select('district_id', $districts, $situation->district_id, ['placeholder' => 'Choose your district','class' => 'form-control','disabled' => 'disabled'])!!}
           </div>
 
           <div class="form-group">
-            {!! Form::hidden('status', 'open', ['class' => 'form-control']) !!}
+              {!! Form::label('approved','Approved?')!!}
+              {!! Form::select('approved', [0 => 'No', 1 => 'Yes'], $situation->approved,['class' => 'form-control']) !!}
           </div>
-
-
+          <div class="form-group">
+              {!! Form::label('deleted','Delete Item?')!!}
+              {!! Form::select('deleted', [0 => 'No', 1 => 'Yes'], $situation->deleted,['class' => 'form-control']) !!}
+          </div>          
 
           <div class="form-group">
             {!! Form::submit('Submit',['class' => 'btn btn-primary']) !!}
